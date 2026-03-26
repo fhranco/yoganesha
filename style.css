@@ -1,0 +1,100 @@
+:root {
+    /* ✨ IDENTIDAD YOGANHESHA v51.0 (Monumental Presence) ✨ */
+    --primary: #2D8C8C;
+    --accent: #D7A24A;
+    --aura: #C9B6D9;
+    --bg-base: #071010;
+    --text-base: #FDF9F4;
+    --text-muted: rgba(253, 249, 244, 0.6);
+    --blur-base: rgba(7, 16, 16, 0.85);
+    --surface: rgba(255, 255, 255, 0.03);
+    --glass-bg: rgba(255, 255, 255, 0.015);
+    --logo-shadow: 0 0 100px rgba(215, 162, 74, 0.25);
+    
+    --container-m: 1240px;
+    --container-s: 840px;
+    --transition: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root[data-theme="light"] {
+    --bg-base: #FDF9F4;
+    --text-base: #071010;
+    --text-muted: rgba(7, 16, 16, 0.55);
+    --blur-base: rgba(253, 249, 244, 0.9);
+    --surface: rgba(255, 255, 255, 0.85);
+}
+
+/* 🖼️ RESET & BASE */
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+body { background-color: var(--bg-base); color: var(--text-base); font-family: 'Manrope', sans-serif; transition: 0.8s ease; line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
+
+/* 🏔️ UTILITIES */
+.container-m { max-width: var(--container-m); margin: 0 auto; padding: 0 5%; }
+.container-s { max-width: var(--container-s); margin: 0 auto; padding: 0 5%; }
+.accent-text { color: var(--accent); font-style: italic; }
+.section-title { font-family: 'Noto Serif', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 2.5rem; letter-spacing: -0.01em; text-align: center; }
+
+/* 🎇 CELESTIAL ELEMENTS */
+#aura-particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 50; }
+.aura-nebula { position: fixed; width: 150vw; height: 150vw; left: -25vw; top: -25vw; background: radial-gradient(circle at center, var(--primary) 0%, var(--aura) 40%, transparent 80%); z-index: -1; filter: blur(150px); opacity: 0.15; animation: nebula-drift 30s ease-in-out infinite; }
+
+/* 🏔️ NAVIGATION & PORTAL MENU */
+.controls-top { position: fixed; top: 40px; right: 50px; z-index: 2000; display: flex; gap: 15px; }
+.theme-switch, .menu-trigger { background: var(--blur-base); backdrop-filter: blur(40px); border: 1px solid rgba(128,128,128,0.2); padding: 12px 28px; border-radius: 500px; cursor: pointer; display: flex; align-items: center; gap: 10px; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2rem; color: var(--text-base); transition: 0.5s var(--transition); }
+
+.menu-portal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--blur-base); backdrop-filter: blur(50px); z-index: 3000; padding: 100px 10%; display: flex; align-items: center; justify-content: center; transform: translateY(-100%); transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+.menu-portal.active { transform: translateY(0); }
+.portal-links { display: flex; flex-direction: column; gap: 30px; text-align: center; }
+.portal-links a { font-family: 'Noto Serif', serif; font-size: clamp(3rem, 6vw, 5rem); color: var(--text-base); text-decoration: none; font-style: italic; transition: 0.5s; opacity: 0.4; }
+.portal-links a:hover { opacity: 1; color: var(--accent); transform: scale(1.05); }
+
+/* 🏟️ HERO SECTION (MONUMENTAL) */
+.hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 120px 5% 60px; text-align: center; position: relative; z-index: 100; }
+.hero-content h1 { font-family: 'Noto Serif', serif; font-size: clamp(3.2rem, 11vw, 7.5rem); line-height: 1.05; margin-bottom: 2.5rem; letter-spacing: -0.02em; text-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+.hero-subtitle { font-size: 1.25rem !important; line-height: 1.8; color: var(--text-muted); margin-bottom: 4.5rem !important; }
+
+.hero-actions { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+
+.btn-primary, .btn-secondary, .btn-whatsapp { display: inline-block; padding: 1.6rem 5rem; border-radius: 500px; text-decoration: none; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.75rem; transition: 0.6s var(--transition); border: 1px solid transparent; }
+.btn-primary { background: var(--accent); color: var(--bg-base); box-shadow: 0 10px 30px rgba(215, 162, 74, 0.2); }
+.btn-primary:hover { background: var(--text-base); transform: scale(1.05) translateY(-8px); box-shadow: 0 30px 60px rgba(215, 162, 74, 0.4); }
+
+.btn-secondary { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); color: var(--text-base); }
+.btn-secondary:hover { background: rgba(255,255,255,0.15); transform: translateY(-5px); border-color: var(--text-base); }
+
+.btn-whatsapp { border: 2px solid var(--accent); color: var(--accent); background: transparent; padding: 1.6rem 5rem; }
+.btn-whatsapp:hover { background: var(--accent); color: var(--bg-base); transform: translateY(-8px); box-shadow: 0 30px 60px rgba(215, 162, 74, 0.2); }
+
+/* 🧘 SECTIONS & PLANES */
+.section { padding: 180px 0; position: relative; z-index: 110; }
+.section-plane { background: var(--glass-bg); backdrop-filter: blur(40px); border: 1px solid rgba(255,255,255,0.03); border-radius: 6rem; padding: 100px 60px; box-shadow: 0 40px 100px rgba(0,0,0,0.1); position: relative; }
+
+/* 🫂 RESONANCE CAPSULES (Section 6) */
+.res-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.03); display: flex; align-items: center; gap: 25px; transition: 0.8s var(--transition); }
+.res-card:hover { background: rgba(255,255,255,0.08); transform: scale(1.05) translateY(-5px); border-color: var(--accent); }
+
+/* 🧬 TRINITY GRID (Section 5) */
+.practices-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 3.5rem; }
+.practice-card { transition: all 0.6s var(--transition); border: 1px solid rgba(255,255,255,0.03); height: 100%; display: flex; flex-direction: column; align-items: center; padding: 70px 45px !important; }
+.practice-card:hover { transform: translateY(-15px); border-color: var(--accent); background: rgba(255,255,255,0.05); }
+.p-icon { font-size: 5rem !important; display: block; margin-bottom: 2.5rem !important; transition: 0.8s var(--transition); filter: drop-shadow(0 0 15px currentColor); }
+.practice-card:hover .p-icon { transform: rotate(360deg) scale(1.1); }
+
+/* 🌊 TESTIMONIALS MARQUEE */
+.marquee-wrapper { width: 100%; overflow: hidden; position: relative; padding: 60px 0; mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); }
+.marquee-track { display: flex; width: max-content; animation: marquee-scroll 45s linear infinite; }
+.marquee-wrapper:hover .marquee-track { animation-play-state: paused; }
+.testimonial-card { background: var(--glass-bg); backdrop-filter: blur(40px); border: 1px solid rgba(255,255,255,0.03); border-radius: 3rem; padding: 40px 50px; width: 500px; margin: 0 20px; color: var(--text-muted); }
+@keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-500px * 3 - 120px)); } }
+
+/* 🎇 REVEAL LOGIC */
+.reveal { opacity: 0; filter: blur(20px); transform: translateY(40px); transition: 1.2s var(--transition); }
+.reveal.active { opacity: 1 !important; filter: blur(0) !important; transform: translateY(0) !important; }
+
+/* 🌓 MOBILE ENFORCEMENT */
+@media (max-width: 900px) {
+    .practices-grid { grid-template-columns: 1fr; }
+    .hero-content h1 { font-size: 3.5rem; }
+    .practice-card { padding: 40px 25px !important; }
+}
