@@ -15,7 +15,7 @@ jobs:
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ftp.yoganesha.cl
+          server: 217.196.57.178
           username: u554097983.fhranco
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
