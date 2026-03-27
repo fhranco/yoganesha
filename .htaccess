@@ -1,0 +1,12 @@
+# 🧩 1. Hiding .html extensions (Friendly URLs)
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
+
+# 🛡️ 2. Direct folder access protection
+Options -Indexes
+
+# 🔒 3. Force HTTPS (Security)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URL} [L,R=301]
