@@ -98,3 +98,14 @@ body { background-color: var(--bg-base); color: var(--text-base); font-family: '
     .hero-content h1 { font-size: 3.5rem; }
     .practice-card { padding: 40px 25px !important; }
 }
+
+/* 🕯️ LUMINOUS JOURNEY THEME (About Me Page) */
+.luminous-journey { background: radial-gradient(circle at center, #FFFFFF 0%, #FAF8F6 100%) !important; color: #4A4A4A !important; }
+.luminous-journey .section-title, .luminous-journey h1, .luminous-journey h2, .luminous-journey h3 { color: #1A1A1A !important; }
+.luminous-journey .accent-text { color: var(--accent) !important; }
+.luminous-journey .section-plane { background: #FFFFFF !important; border-color: rgba(215, 162, 74, 0.1) !important; box-shadow: 0 40px 100px rgba(215, 162, 74, 0.05) !important; }
+.luminous-journey .story-text p, .luminous-journey .narrative p { color: #555555 !important; }
+.luminous-journey .sacred { background: #FDFBF8 !important; }
+.luminous-journey .final-monument { border-color: rgba(215, 162, 74, 0.15) !important; }
+.luminous-journey a:not(.btn-primary) { color: #555555 !important; }
+.luminous-journey blockquote, .luminous-journey .highlight p { color: #2D2D2D !important; }
