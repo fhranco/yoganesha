@@ -110,12 +110,18 @@ body { background-color: var(--bg-base); color: var(--text-base); font-family: '
 .luminous-journey a:not(.btn-primary) { color: #555555 !important; }
 .luminous-journey blockquote, .luminous-journey .highlight p { color: #2D2D2D !important; }
 
-/* 🌫️ ETHEREAL SANCTUARY (Depth & Layering) */
-.ethereal-section { position: relative; padding: 200px 0; overflow: hidden; }
-.ethereal-plate { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(40px); border-radius: 5rem; padding: 100px 8%; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 40px 120px rgba(0,0,0,0.03); position: relative; z-index: 5; margin: 0 5%; }
-.floating-title { position: absolute; font-family: 'Noto Serif'; font-size: 15rem; font-style: italic; opacity: 0.02; top: -10%; left: -5%; pointer-events: none; z-index: 1; white-space: nowrap; }
-.vertical-tag { position: absolute; left: -120px; top: 100px; transform: rotate(-90deg); font-size: 0.75rem; letter-spacing: 0.8em; text-transform: uppercase; color: var(--accent); white-space: nowrap; opacity: 0.6; }
-.ritual-cta { display: inline-block; padding: 25px 80px; background: #1A1A1A; color: #FFF; text-decoration: none; border-radius: 0; font-family: 'Noto Serif'; font-style: italic; font-size: 1.2rem; transition: 0.4s var(--transition); border: 1px solid #1A1A1A; }
-.ritual-cta:hover { background: transparent; color: #1A1A1A; transform: scale(1.05); }
-.detail-item { border-left: 1px solid rgba(215,162,74,0.15); padding: 0 0 40px 40px; }
-.detail-item h4 { font-size: 0.9rem; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 2rem; color: var(--accent); }
+/* 🏛️ MODERN GALLERY PRECISION (The Final Standard) */
+.gallery-row { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 80px; padding: 120px 0; border-bottom: 1px solid #F0F0F0; }
+.gallery-row:nth-child(even) { direction: rtl; }
+.gallery-row:nth-child(even) > * { direction: ltr; }
+@media (max-width: 900px) { .gallery-row { grid-template-columns: 1fr; gap: 60px; padding: 80px 0; } }
+.gallery-image { border-radius: 0.5rem; overflow: hidden; width: 100%; aspect-ratio: 1/1; box-shadow: 0 40px 80px rgba(0,0,0,0.04); }
+.gallery-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--transition); }
+.gallery-image:hover img { transform: scale(1.05); }
+.gallery-content { padding: 40px; }
+.gallery-content .label { font-size: 0.75rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--accent); margin-bottom: 2.5rem; display: block; font-weight: 800; }
+.gallery-content h2 { font-family: 'Noto Serif'; font-size: clamp(2.5rem, 5vw, 3.8rem); line-height: 1.1; color: #1A1A1A; margin-bottom: 3rem; font-weight: 400; }
+.gallery-content p { font-size: 1.15rem; line-height: 2; color: #666; margin-bottom: 3.5rem; max-width: 500px; }
+.gallery-content .price-tag { font-family: 'Noto Serif'; font-size: 1.5rem; color: #1A1A1A; margin-bottom: 4rem; display: block; font-style: italic; }
+.btn-gallery { display: inline-block; padding: 20px 50px; background: #1A1A1A; color: #FFF; text-decoration: none; border-radius: 0; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 800; transition: 0.3s; }
+.btn-gallery:hover { background: var(--accent); transform: translateY(-3px); }
