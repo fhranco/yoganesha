@@ -110,8 +110,12 @@ body { background-color: var(--bg-base); color: var(--text-base); font-family: '
 .luminous-journey a:not(.btn-primary) { color: #555555 !important; }
 .luminous-journey blockquote, .luminous-journey .highlight p { color: #2D2D2D !important; }
 
-/* 🪐 GALLERY SANCTUARY (Minimalist High-End) */
-.gallery-section { padding: 180px 0; border-bottom: 1px solid rgba(215, 162, 74, 0.05); }
-.gallery-number { font-family: 'Noto Serif'; font-size: 8rem; opacity: 0.03; position: absolute; top: -40px; left: -20px; font-style: italic; z-index: -1; pointer-events: none; }
-.floating-accent { color: var(--accent); font-size: 1.2rem; margin-bottom: 2rem; display: block; letter-spacing: 0.4em; }
-.clean-price { font-family: 'Noto Serif'; font-size: 1.8rem; color: #1A1A1A; margin: 2rem 0; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 2rem; display: inline-block; }
+/* 🏛️ ORDERED SANCTUARY (Structure & Clarity) */
+.ordered-card { background: #FFFFFF; border: 1px solid rgba(215, 162, 74, 0.12); border-radius: 4rem; padding: 80px; margin-bottom: 60px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.02); display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start; }
+@media (max-width: 900px) { .ordered-card { grid-template-columns: 1fr; gap: 60px; padding: 60px 40px; } }
+.ordered-card h2 { font-family: 'Noto Serif'; font-size: clamp(2.2rem, 5vw, 3.2rem); color: #1A1A1A; margin-bottom: 1.5rem; }
+.ordered-card .price-badge { display: inline-block; padding: 12px 25px; background: rgba(215, 162, 74, 0.05); color: var(--accent); border-radius: 30px; font-weight: 800; font-size: 0.9rem; letter-spacing: 0.1em; }
+.ordered-card .info-block { padding: 40px; border-radius: 2.5rem; background: #FDFBFB; border: 1px solid rgba(215, 162, 74, 0.05); }
+.ordered-card ul { list-style: none; padding: 0; }
+.ordered-card ul li { position: relative; padding-left: 30px; margin-bottom: 12px; color: #555; font-size: 1.05rem; }
+.ordered-card ul li::before { content: "✧"; position: absolute; left: 0; color: var(--accent); }
