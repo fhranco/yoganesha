@@ -76,7 +76,7 @@ body { background-color: var(--bg-base); color: var(--text-base); font-family: '
 
 /* 🧬 TRINITY GRID (Section 5) */
 .practices-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 3.5rem; }
-.practice-card { transition: all 0.6s var(--transition); border: 1px solid rgba(255,255,255,0.03); height: 100%; display: flex; flex-direction: column; align-items: center; padding: 70px 45px !important; }
+.practice-card { transition: all 0.6s var(--transition); border: 1px solid rgba(255,255,255,0.03); height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; padding: 70px 45px !important; }
 .practice-card:hover { transform: translateY(-15px); border-color: var(--accent); background: rgba(255,255,255,0.05); }
 .p-icon { font-size: 5rem !important; display: block; margin-bottom: 2.5rem !important; transition: 0.8s var(--transition); filter: drop-shadow(0 0 15px currentColor); }
 .practice-card:hover .p-icon { transform: rotate(360deg) scale(1.1); }
