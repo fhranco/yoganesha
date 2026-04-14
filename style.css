@@ -76,10 +76,11 @@ body { background-color: var(--bg-base); color: var(--text-base); font-family: '
 
 /* 🧬 TRINITY GRID (Section 5) */
 .practices-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 3.5rem; }
-.practice-card { transition: all 0.6s var(--transition); border: 1px solid rgba(255,255,255,0.03); height: 100%; display: flex; flex-direction: column; align-items: center; padding: 70px 45px !important; }
-.practice-card:hover { transform: translateY(-15px); border-color: var(--accent); background: rgba(255,255,255,0.05); }
-.p-icon { font-size: 5rem !important; display: block; margin-bottom: 2.5rem !important; transition: 0.8s var(--transition); filter: drop-shadow(0 0 15px currentColor); }
-.practice-card:hover .p-icon { transform: rotate(360deg) scale(1.1); }
+.practice-card { transition: all 0.6s var(--transition); border: 1px solid rgba(255,255,255,0.03); height: 100%; display: flex; flex-direction: column; align-items: center; padding: 80px 50px !important; text-align: center; }
+.practice-card:hover { transform: translateY(-15px); border-color: var(--accent); background: rgba(255,255,255,0.05); box-shadow: 0 40px 80px rgba(0,0,0,0.3); }
+.practice-card h3 { font-family: 'Noto Serif', serif; font-size: 1.85rem; margin-bottom: 2rem; font-style: italic; min-height: 4.5rem; display: flex; align-items: center; justify-content: center; }
+.p-icon { font-size: 5.5rem !important; display: block; margin-bottom: 3rem !important; transition: 0.8s var(--transition); filter: drop-shadow(0 0 20px currentColor); height: 6rem; display: flex; align-items: center; justify-content: center; }
+.practice-card:hover .p-icon { transform: rotate(15deg) scale(1.1); }
 
 /* 🌊 TESTIMONIALS MARQUEE */
 .marquee-wrapper { width: 100%; overflow: hidden; position: relative; padding: 60px 0; mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); }
