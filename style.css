@@ -109,3 +109,10 @@ body { background-color: var(--bg-base); color: var(--text-base); font-family: '
 .luminous-journey .final-monument { border-color: rgba(215, 162, 74, 0.15) !important; }
 .luminous-journey a:not(.btn-primary) { color: #555555 !important; }
 .luminous-journey blockquote, .luminous-journey .highlight p { color: #2D2D2D !important; }
+
+/* ✨ SPECTACULAR DESIGN UPGRADE */
+.spectacular-card { background: rgba(255, 255, 255, 0.7) !important; backdrop-filter: blur(25px) !important; border: 1px solid rgba(215, 162, 74, 0.1) !important; box-shadow: 0 40px 100px rgba(0, 0, 0, 0.03) !important; transition: transform 0.6s var(--transition), box-shadow 0.6s var(--transition); }
+.spectacular-card:hover { transform: translateY(-15px); box-shadow: 0 60px 140px rgba(215, 162, 74, 0.08) !important; }
+.aura-glow { position: absolute; z-index: -1; pointer-events: none; opacity: 0.15; filter: blur(100px); border-radius: 50%; background: radial-gradient(circle, var(--accent) 0%, transparent 70%); }
+.price-tag { display: inline-block; padding: 15px 30px; border-radius: 500px; background: rgba(215, 162, 74, 0.05); border: 1px solid rgba(215, 162, 74, 0.15); color: var(--accent); font-family: 'Noto Serif'; font-weight: 800; }
+.journey-line { position: absolute; width: 1px; height: 100%; background: linear-gradient(to bottom, transparent, rgba(215, 162, 74, 0.1), transparent); left: 50%; transform: translateX(-50%); z-index: 0; pointer-events: none; }
