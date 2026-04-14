@@ -51,7 +51,7 @@ body { background-color: var(--bg-base); color: var(--text-base); font-family: '
 
 /* 🏟️ HERO SECTION (MONUMENTAL) */
 .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 120px 5% 60px; text-align: center; position: relative; z-index: 100; }
-.hero-content h1 { font-family: 'Noto Serif', serif; font-size: clamp(3.2rem, 11vw, 7.5rem); line-height: 1.05; margin-bottom: 2.5rem; letter-spacing: -0.02em; text-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+.hero-content h1 { font-family: 'Noto Serif', serif; font-size: clamp(3.2rem, 11vw, 7.5rem); line-height: 1.05; margin-bottom: 2.5rem; letter-spacing: -0.02em; }
 .hero-subtitle { font-size: 1.25rem !important; line-height: 1.8; color: var(--text-muted); margin-bottom: 4.5rem !important; }
 
 .hero-actions { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
