@@ -61,7 +61,18 @@ body { background-color: var(--bg-base); color: var(--text-base); font-family: '
 .btn-primary:hover { background: var(--text-base); transform: scale(1.05) translateY(-8px); box-shadow: 0 30px 60px rgba(215, 162, 74, 0.4); }
 
 .btn-secondary { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); color: var(--text-base); }
+
 .btn-secondary:hover { background: rgba(255,255,255,0.15); transform: translateY(-5px); border-color: var(--text-base); }
+
+/* 🔱 LOGO CENTERING ENFORCEMENT */
+.hero-tilt-wrapper, .hero-visual, .logo-main-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#main-logo-img { display: block; margin: 0 auto; }
 
 .btn-whatsapp { border: 2px solid var(--accent); color: var(--accent); background: transparent; padding: 1.6rem 5rem; }
 .btn-whatsapp:hover { background: var(--accent); color: var(--bg-base); transform: translateY(-8px); box-shadow: 0 30px 60px rgba(215, 162, 74, 0.2); }
