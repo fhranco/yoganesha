@@ -3,41 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Energía: Enraizar tu Energía | YOGANESHA</title>
-    <link rel="stylesheet" href="style.css?v=102.0">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Enraizar tu energía | Cápsulas Yoganesha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;600;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=107.0">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+        .main-wrapper {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .capsule-card-master {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(215, 162, 74, 0.1);
+            border-radius: 4rem;
+            max-width: 900px;
+            width: 100%;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* 🌀 FRACTAL PLAYER STYLES */
+        .fractal-player-container {
+            margin: 1.5rem 0;
+            position: relative;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #fractal-canvas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .play-trigger {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(215, 162, 74, 0.1);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1.2rem;
+            box-shadow: 0 0 30px rgba(215, 162, 74, 0.1);
+        }
+        .play-trigger:hover {
+            transform: scale(1.1);
+            background: rgba(215, 162, 74, 0.2);
+            box-shadow: 0 0 50px rgba(215, 162, 74, 0.3);
+        }
+        .play-trigger.playing {
+            background: var(--accent);
+            color: #FFF;
+            animation: pulse-energy 2s infinite;
+        }
+        @keyframes pulse-energy {
+            0% { box-shadow: 0 0 30px rgba(215, 162, 74, 0.3); }
+            50% { box-shadow: 0 0 60px rgba(215, 162, 74, 0.6); }
+            100% { box-shadow: 0 0 30px rgba(215, 162, 74, 0.3); }
+        }
+
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            width: 100%;
+            margin: 1.5rem 0;
+        }
+        .step-block {
+            padding: 15px;
+            background: rgba(215, 162, 74, 0.03);
+            border: 1px solid rgba(215, 162, 74, 0.05);
+            border-radius: 1.5rem;
+        }
+        .step-title {
+            font-family: 'Noto Serif';
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+        .step-text {
+            font-size: 0.8rem;
+            line-height: 1.4;
+            color: var(--text-muted);
+        }
+        .mantra-box {
+            border-top: 1px solid rgba(215, 162, 74, 0.1);
+            border-bottom: 1px solid rgba(215, 162, 74, 0.1);
+            padding: 20px;
+            margin: 1.5rem 0;
+            font-family: 'Noto Serif';
+            font-style: italic;
+            font-size: 1.25rem;
+            color: var(--text-base);
+        }
+    </style>
 </head>
 <body>
+    
     <div class="aura-nebula"></div>
     <canvas id="aura-particles"></canvas>
+
     <div class="controls-top">
-        <a href="capsulas" class="menu-trigger" style="text-decoration: none;"><span>[ Volver ]</span></a>
+        <a href="capsulas" style="text-decoration: none; color: var(--text-muted); font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase;">[ Regresar a Cápsulas ]</a>
     </div>
 
-    <main class="section" style="padding-top: 120px;">
-        <article class="container-s reveal active" style="opacity: 1; filter: blur(0); transform: translateY(0);">
-            <div class="section-plane" style="padding: 100px 10%;">
-                <span style="color: var(--accent); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.3em; display: block; margin-bottom: 2rem;">Energía · Consejos</span>
-                <h1 class="section-title" style="text-align: left; font-size: 3.5rem;">Enraizar tu <span class="accent-text">energía</span></h1>
-                
-                <div style="margin-top: 4rem; text-align: left; font-size: 1.25rem; line-height: 2; color: var(--text-muted);">
-                    <p style="margin-bottom: 2rem;">Cuando nos sentimos dispersas, ansiosas o abrumadas, es porque nuestra energía está concentrada en la cabeza. "Enraizar" es el acto de volver a conectar con la tierra.</p>
-                    <p style="margin-bottom: 2rem; font-weight: 800; color: var(--text-base);">Tres pasos para hoy:</p>
-                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 20px; margin-bottom: 2rem; border-left: 1px solid var(--accent); padding-left: 30px;">
-                        <li><strong>1. Descalza:</strong> Si puedes, pisa tierra o pasto por 5 minutos. Si no, simplemente siente la presión de tus plantas contra el suelo.</li>
-                        <li><strong>2. Descarga:</strong> Visualiza raíces que salen de tus pies y se hunden en el centro de la tierra, entregando todo el exceso de carga mental.</li>
-                        <li><strong>3. Intención:</strong> Repite mentalmente: "Estoy presente, estoy sostenida, pertenezco a este momento".</li>
-                    </ul>
-                    <p>El enraizamiento es el primer paso para cualquier sanación real.</p>
-                </div>
+    <div class="main-wrapper">
+        <main class="capsule-card-master reveal">
+            
+            <!-- INTRODUCCIÓN -->
+            <header>
+                <span style="color: var(--accent); letter-spacing: 0.4em; text-transform: uppercase; font-size: 0.6rem; display: block; margin-bottom: 0.5rem;">Cápsula de Enraizamiento</span>
+                <h1 style="font-family: 'Noto Serif'; font-size: 2.5rem; line-height: 1.1; margin-bottom: 1rem; font-weight: 400;">
+                    Enraizar tu <span style="font-style: italic; color: var(--accent);">energía</span>
+                </h1>
+                <p style="font-size: 0.95rem; line-height: 1.5; color: var(--text-muted); font-weight: 300; max-width: 600px; margin: 0 auto;">
+                    Cuando nos sentimos dispersas o abrumadas, nuestra energía se queda en la cabeza. Enraizar es volver al cuerpo y recordar que podemos sostenernos.
+                </p>
+            </header>
 
-                <div style="margin-top: 6rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 4rem;">
-                    <a href="https://wa.me/56985966922" class="btn-primary">Consultar a Cristina</a>
+            <!-- 🌀 REPRODUCTOR FRACTAL -->
+            <div class="fractal-player-container">
+                <canvas id="fractal-canvas" width="400" height="400"></canvas>
+                <div class="play-trigger" id="audio-toggle">
+                    <span id="play-icon">▶</span>
+                </div>
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 4px;">
+                    <p id="audio-status" style="font-size: 0.65rem; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin: 0;">Escucha la guía</p>
+                    <p id="audio-duration" style="font-size: 0.6rem; letter-spacing: 0.1em; color: var(--text-muted); opacity: 0.6; margin: 0;">Calculando tiempo...</p>
+                </div>
+                <audio id="capsule-audio" src="assets/capsula2.mp3" preload="metadata"></audio>
+            </div>
+
+            <!-- GRID DE PASOS -->
+            <div class="step-grid">
+                <div class="step-block reveal">
+                    <h3 class="step-title">1. Descalza</h3>
+                    <p class="step-text">Pisa tierra o pasto. Siente el contacto con el suelo.</p>
+                </div>
+                <div class="step-block reveal">
+                    <h3 class="step-title">2. Descarga</h3>
+                    <p class="step-text">Imagina raíces que nacen desde tus pies hacia la tierra.</p>
+                </div>
+                <div class="step-block reveal">
+                    <h3 class="step-title">3. Intención</h3>
+                    <p class="step-text">"Estoy aquí, estoy sostenida, pertenezco a este momento."</p>
                 </div>
             </div>
-        </article>
-    </main>
 
-    <script src="main.js?v=102.0"></script>
+            <!-- MANTRA -->
+            <div class="mantra-box reveal">
+                “Volver a la tierra es el primer paso para volver a ti.”
+            </div>
+
+            <footer>
+                <a href="https://wa.me/56985966922" class="btn-whatsapp" style="padding: 10px 25px; font-size: 0.75rem;">Compartir mi experiencia</a>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        const audio = document.getElementById('capsule-audio');
+        const toggle = document.getElementById('audio-toggle');
+        const icon = document.getElementById('play-icon');
+        const durationDisplay = document.getElementById('audio-duration');
+        const canvas = document.getElementById('fractal-canvas');
+        const ctx = canvas.getContext('2d');
+        let isPlaying = false;
+        let particles = [];
+        let animationId;
+
+        // ⏱️ CALCULAR DURACIÓN
+        audio.addEventListener('loadedmetadata', () => {
+            const minutes = Math.floor(audio.duration / 60);
+            const seconds = Math.floor(audio.duration % 60);
+            durationDisplay.innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds} MINUTOS`;
+        });
+
+        // Fallback si ya cargó
+        if (audio.readyState >= 1) {
+            const minutes = Math.floor(audio.duration / 60);
+            const seconds = Math.floor(audio.duration % 60);
+            durationDisplay.innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds} MINUTOS`;
+        }
+
+        class FractalParticle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = canvas.width / 2;
+                this.y = canvas.height / 2;
+                this.angle = Math.random() * Math.PI * 2;
+                this.velocity = 1 + Math.random() * 2;
+                this.life = 1;
+                this.decay = 0.005 + Math.random() * 0.01;
+                this.color = `rgba(215, 162, 74, ${Math.random() * 0.5})`;
+            }
+            update() {
+                this.x += Math.cos(this.angle) * this.velocity;
+                this.y += Math.sin(this.angle) * this.velocity;
+                this.life -= this.decay;
+                if (this.life <= 0) this.reset();
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 1, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            for (let i = 0; i < 60; i++) particles.push(new FractalParticle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (isPlaying) {
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+            }
+            animationId = requestAnimationFrame(animate);
+        }
+
+        toggle.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                isPlaying = true;
+                toggle.classList.add('playing');
+                icon.innerText = 'II';
+            } else {
+                audio.pause();
+                isPlaying = false;
+                toggle.classList.remove('playing');
+                icon.innerText = '▶';
+            }
+        });
+
+        initParticles();
+        animate();
+    </script>
+    <script src="main.js?v=107.0"></script>
 </body>
 </html>

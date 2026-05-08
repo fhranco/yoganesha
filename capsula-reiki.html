@@ -3,39 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reiki: Autoreiki Matutino | YOGANESHA</title>
-    <link rel="stylesheet" href="style.css?v=102.0">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Autocuidado Energético Matutino | Cápsulas Yoganesha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;600;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=107.0">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+        .main-wrapper {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .capsule-card-master {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(215, 162, 74, 0.1);
+            border-radius: 4rem;
+            max-width: 900px;
+            width: 100%;
+            padding: 40px 50px;
+            text-align: center;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .ritual-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            width: 100%;
+            margin: 1.5rem 0;
+        }
+        .ritual-step {
+            padding: 20px;
+            background: rgba(215, 162, 74, 0.03);
+            border: 1px solid rgba(215, 162, 74, 0.05);
+            border-radius: 2rem;
+            text-align: left;
+        }
+        .step-tag {
+            color: var(--accent);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .step-title {
+            font-family: 'Noto Serif';
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+            color: var(--text-base);
+        }
+        .step-desc {
+            font-size: 0.8rem;
+            line-height: 1.5;
+            color: var(--text-muted);
+        }
+        .final-intention {
+            border-top: 1px solid rgba(215, 162, 74, 0.1);
+            padding-top: 1.5rem;
+            margin-top: 1rem;
+            font-family: 'Noto Serif';
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--text-base);
+        }
+    </style>
 </head>
 <body>
+    
     <div class="aura-nebula"></div>
     <canvas id="aura-particles"></canvas>
+
     <div class="controls-top">
-        <a href="capsulas" class="menu-trigger" style="text-decoration: none;"><span>[ Volver ]</span></a>
+        <a href="capsulas" style="text-decoration: none; color: var(--text-muted); font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase;">[ Regresar a Cápsulas ]</a>
     </div>
 
-    <main class="section" style="padding-top: 120px;">
-        <article class="container-s reveal active" style="opacity: 1; filter: blur(0); transform: translateY(0);">
-            <div class="section-plane" style="padding: 100px 10%;">
-                <span style="color: var(--accent); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.3em; display: block; margin-bottom: 2rem;">Reiki · Autocuidado</span>
-                <h1 class="section-title" style="text-align: left; font-size: 3.5rem;">Autoreiki <span class="accent-text">matutino</span></h1>
-                
-                <div style="margin-top: 4rem; text-align: left; font-size: 1.25rem; line-height: 2; color: var(--text-muted);">
-                    <p style="margin-bottom: 2rem;">Tus manos son herramientas de sanación. Al despertar, antes de que el mundo exterior te reclame, puedes armonizar tus centros de energía con este breve ritual.</p>
-                    <p style="margin-bottom: 1rem;">1. Frota tus manos para generar calor.</p>
-                    <p style="margin-bottom: 1rem;">2. Llévalas a tus ojos y respira hondo (Calma el pensamiento).</p>
-                    <p style="margin-bottom: 1rem;">3. Llévalas a tu plexo solar, bajo las costillas (Libera el miedo).</p>
-                    <p style="margin-bottom: 1.5rem;">4. Finaliza en tu corazón, sintiendo el latido de la vida fluyendo en ti.</p>
-                    <p>No necesitas ser una experta, solo necesitas intención y amor por tu propio proceso.</p>
-                </div>
+    <div class="main-wrapper">
+        <main class="capsule-card-master reveal">
+            
+            <header>
+                <span style="color: var(--accent); letter-spacing: 0.4em; text-transform: uppercase; font-size: 0.6rem; display: block; margin-bottom: 0.5rem;">Cápsula de Autocuidado</span>
+                <h1 style="font-family: 'Noto Serif'; font-size: 2.2rem; line-height: 1.1; margin-bottom: 1.2rem; font-weight: 400;">
+                    Autocuidado <span style="font-style: italic; color: var(--accent);">matutino</span>
+                </h1>
+                <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted); font-weight: 300; max-width: 650px; margin: 0 auto; font-family: 'Noto Serif'; font-style: italic;">
+                    Tus manos son herramientas de conexión y sanación. Al despertar, antes de que el mundo exterior te reclame, regálate unos minutos para volver a ti.
+                </p>
+            </header>
 
-                <div style="margin-top: 6rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 4rem;">
-                    <a href="https://wa.me/56985966922" class="btn-primary">Consultar por una sesión de Reiki</a>
+            <div class="ritual-grid">
+                <!-- PASO 1 -->
+                <div class="ritual-step reveal">
+                    <span class="step-tag">01 · Activa</span>
+                    <h3 class="step-title">Despertar el calor</h3>
+                    <p class="step-desc">Frota tus manos suavemente hasta sentir el calor entre ellas.</p>
+                </div>
+                <!-- PASO 2 -->
+                <div class="ritual-step reveal" style="transition-delay: 0.1s;">
+                    <span class="step-tag">02 · Calma</span>
+                    <h3 class="step-title">Silencio mental</h3>
+                    <p class="step-desc">Lleva tus manos a tus ojos y respira profundo. Permite que tu mente se aquiete.</p>
+                </div>
+                <!-- PASO 3 -->
+                <div class="ritual-step reveal" style="transition-delay: 0.2s;">
+                    <span class="step-tag">03 · Libera</span>
+                    <h3 class="step-title">Suelto la carga</h3>
+                    <p class="step-desc">Lleva tus manos a tu plexo solar. Suelta la tensión, el miedo y cualquier carga acumulada.</p>
+                </div>
+                <!-- PASO 4 -->
+                <div class="ritual-step reveal" style="transition-delay: 0.3s;">
+                    <span class="step-tag">04 · Conecta</span>
+                    <h3 class="step-title">Presencia viva</h3>
+                    <p class="step-desc">Finaliza en tu corazón, sintiendo el latido de la vida. Permanece ahí simplemente sintiendo.</p>
                 </div>
             </div>
-        </article>
-    </main>
 
-    <script src="main.js?v=102.0"></script>
+            <div class="final-intention reveal">
+                No necesitas conocimientos previos. <br>
+                Solo presencia y una intención amorosa hacia ti.
+            </div>
+
+            <footer style="margin-top: 1.5rem;">
+                <a href="https://wa.me/56985966922" class="btn-whatsapp" style="padding: 10px 25px; font-size: 0.75rem;">Compartir mi ritual</a>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="main.js?v=107.0"></script>
 </body>
 </html>

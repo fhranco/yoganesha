@@ -3,37 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reflexión: El Arte de Pausar | YOGANESHA</title>
-    <link rel="stylesheet" href="style.css?v=102.0">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>El arte de pausar | Cápsulas Yoganesha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;600;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=107.0">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+        .main-wrapper {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .capsule-card-master {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(215, 162, 74, 0.1);
+            border-radius: 4rem;
+            max-width: 850px;
+            width: 100%;
+            padding: 35px 40px;
+            text-align: center;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .fractal-player-container {
+            margin: 0.8rem 0;
+            position: relative;
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #fractal-canvas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .play-trigger {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(215, 162, 74, 0.1);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1rem;
+        }
+        .play-trigger.playing {
+            background: var(--accent);
+            color: #FFF;
+            animation: pulse-pause 6s ease-in-out infinite;
+        }
+        @keyframes pulse-pause {
+            0% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+            100% { opacity: 0.8; transform: scale(1); }
+        }
+
+        .reflection-content {
+            margin: 1.2rem 0;
+            font-family: 'Noto Serif';
+            font-size: 1.15rem;
+            line-height: 1.6;
+            font-style: italic;
+            color: var(--text-base);
+        }
+        .mantra-box {
+            border-top: 1px solid rgba(215, 162, 74, 0.1);
+            border-bottom: 1px solid rgba(215, 162, 74, 0.1);
+            padding: 12px;
+            margin: 1rem 0;
+            font-family: 'Noto Serif';
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+    </style>
 </head>
 <body>
+    
     <div class="aura-nebula"></div>
     <canvas id="aura-particles"></canvas>
+
     <div class="controls-top">
-        <a href="capsulas" class="menu-trigger" style="text-decoration: none;"><span>[ Volver ]</span></a>
+        <a href="capsulas" style="text-decoration: none; color: var(--text-muted); font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase;">[ Regresar a Cápsulas ]</a>
     </div>
 
-    <main class="section" style="padding-top: 120px;">
-        <article class="container-s reveal active" style="opacity: 1; filter: blur(0); transform: translateY(0);">
-            <div class="section-plane" style="padding: 100px 10%;">
-                <span style="color: var(--accent); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.3em; display: block; margin-bottom: 2rem;">Reflexión · Lectura</span>
-                <h1 class="section-title" style="text-align: left; font-size: 3.5rem;">El arte de <span class="accent-text">pausar</span></h1>
-                
-                <div style="margin-top: 4rem; text-align: left; font-size: 1.25rem; line-height: 2; color: var(--text-muted);">
-                    <p style="margin-bottom: 2rem;">Vivimos en una cultura que glorifica el "hacer". Pero en la naturaleza, nada florece todo el año. El invierno es necesario para que la primavera tenga fuerza.</p>
-                    <p style="margin-bottom: 2rem;">Pausar no es perder el tiempo; es ganar consciencia. Es en el vacío, en ese espacio entre una respiración y otra, donde realmente escuchamos la voz de nuestra intuición.</p>
-                    <p style="margin-bottom: 2rem; font-style: italic;">¿Cuándo fue la última vez que te permitiste no tener un objetivo?</p>
-                    <p>Hoy te invito a regalarte 10 minutos de "nada". Sin celular, sin música, sin planes. Solo tú, habitando el espacio sagrado de tu propia compañía.</p>
+    <div class="main-wrapper">
+        <main class="capsule-card-master reveal">
+            
+            <header>
+                <span style="color: var(--accent); letter-spacing: 0.4em; text-transform: uppercase; font-size: 0.55rem; display: block; margin-bottom: 0.4rem;">Cápsula de Reflexión</span>
+                <h1 style="font-family: 'Noto Serif'; font-size: 2.2rem; line-height: 1.1; margin-bottom: 1.2rem; font-weight: 400;">
+                    El arte de <span style="font-style: italic; color: var(--accent);">pausar</span>
+                </h1>
+                <div style="font-size: 0.95rem; line-height: 1.6; color: var(--text-body); font-weight: 300; max-width: 600px; margin: 0 auto; font-family: 'Noto Serif'; font-style: italic;">
+                    <p>Vivimos en un ritmo constante de hacer, de avanzar, de llenar cada espacio. Y a veces… detenernos se siente incómodo.</p>
+                    <p style="margin-top: 0.5rem;">Pausar no es perder el tiempo. Es abrir un espacio donde algo nuevo puede surgir.</p>
                 </div>
+            </header>
 
-                <div style="margin-top: 6rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 4rem;">
-                    <a href="https://wa.me/56985966922" class="btn-primary">Conversar con Cristina</a>
-                </div>
+            <div class="reflection-content reveal" style="margin: 1.5rem 0;">
+                Hoy te invito a regalarte 7 minutos de “nada”. <br>
+                Sin distracciones. Solo tú… habitándote… <br>
+                en el espacio de tu propia compañía.
             </div>
-        </article>
-    </main>
 
-    <script src="main.js?v=102.0"></script>
+            <div class="fractal-player-container">
+                <canvas id="fractal-canvas" width="400" height="400"></canvas>
+                <div class="play-trigger" id="audio-toggle">
+                    <span id="play-icon">▶</span>
+                </div>
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 4px;">
+                    <p id="audio-status" style="font-size: 0.65rem; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin: 0;">Solo escucha y conecta</p>
+                    <p id="audio-duration" style="font-size: 0.6rem; letter-spacing: 0.1em; color: var(--text-muted); opacity: 0.6; margin: 0;">Calculando tiempo...</p>
+                </div>
+                <audio id="capsule-audio" src="assets/capsula3.mp3" preload="metadata"></audio>
+            </div>
+
+            <div class="mantra-box reveal">
+                A veces, detenerse es el movimiento más valiente. <br>
+                Permítete simplemente ser, sin hacer.
+            </div>
+
+            <footer>
+                <a href="https://wa.me/56985966922" class="btn-whatsapp" style="padding: 10px 25px; font-size: 0.75rem;">Compartir mi sentir</a>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        const audio = document.getElementById('capsule-audio');
+        const toggle = document.getElementById('audio-toggle');
+        const icon = document.getElementById('play-icon');
+        const durationDisplay = document.getElementById('audio-duration');
+        const canvas = document.getElementById('fractal-canvas');
+        const ctx = canvas.getContext('2d');
+        let isPlaying = false;
+        let particles = [];
+        let animationId;
+
+        audio.addEventListener('loadedmetadata', () => {
+            const minutes = Math.floor(audio.duration / 60);
+            const seconds = Math.floor(audio.duration % 60);
+            durationDisplay.innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds} MINUTOS`;
+        });
+
+        class ReflectionParticle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = canvas.width / 2;
+                this.y = canvas.height / 2;
+                this.angle = Math.random() * Math.PI * 2;
+                this.velocity = 0.3 + Math.random() * 0.5;
+                this.life = 1;
+                this.decay = 0.001 + Math.random() * 0.003;
+                this.color = `rgba(215, 162, 74, ${Math.random() * 0.2})`;
+            }
+            update() {
+                const speed = isPlaying ? this.velocity : this.velocity * 0.1;
+                this.x += Math.cos(this.angle) * speed;
+                this.y += Math.sin(this.angle) * speed;
+                this.life -= this.decay;
+                if (this.life <= 0) this.reset();
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 1, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            for (let i = 0; i < 50; i++) particles.push(new ReflectionParticle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            animationId = requestAnimationFrame(animate);
+        }
+
+        toggle.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                isPlaying = true;
+                toggle.classList.add('playing');
+                icon.innerText = 'II';
+            } else {
+                audio.pause();
+                isPlaying = false;
+                toggle.classList.remove('playing');
+                icon.innerText = '▶';
+            }
+        });
+
+        initParticles();
+        animate();
+    </script>
+    <script src="main.js?v=107.0"></script>
 </body>
 </html>

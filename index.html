@@ -17,19 +17,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- JSON-LD Wellness Authority -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WellnessCenter",
-      "name": "Yoganesha",
-      "founder": "Cristina",
-      "description": "Centro de Reiki, Yoga y Acompañamiento Energético",
-      "url": "http://localhost:8000"
-    }
+    <script>
+        // Sanctuary Theme Engine v62.5
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', currentTheme);
     </script>
     
     <!-- CACHE BUSTER v66.0 -->
-    <link rel="stylesheet" href="style.css?v=105.0">
+    <link rel="stylesheet" href="style.css?v=107.0">
 </head>
 <body>
     
@@ -71,11 +66,11 @@
                 </div>
                 <div class="hero-content reveal">
 
-                    <h1 id="hero-title">Vuelve a tu <span style="font-style: italic; color: var(--accent);">centro</span></h1>
-                    <p class="hero-subtitle" style="max-width: 700px; margin: 0 auto 3.5rem; font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); font-weight: 400;">Responde un breve cuestionario y recibe una orientación personalizada para armonizar tu energía, calmar tu mente y volver a ti.</p>
+                    <h1 id="hero-title">Vuelve a tu <span style="font-weight: 700; color: var(--accent);">centro</span></h1>
+                    <p class="hero-subtitle" style="max-width: 600px; margin: 0 auto 3.5rem; font-size: 18px; line-height: 1.7; color: var(--text-body); font-weight: 300;">Responde un breve cuestionario y recibe una orientación personalizada para armonizar tu energía, calmar tu mente y vuelve&nbsp;a&nbsp;ti.</p>
                     <div class="hero-actions">
                         <a href="diagnostico" class="btn-primary">Comenzar mi diagnóstico</a>
-                        <a href="sesiones" class="btn-secondary" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-base); padding: 1.4rem 4rem; border-radius: 500px; text-decoration: none; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.7rem; transition: 0.5s var(--transition);">Ver sesiones</a>
+                        <a href="sesiones" class="btn-secondary">Ver sesiones</a>
                     </div>
                 </div>
             </div>
@@ -85,11 +80,11 @@
         <section class="section who" id="who">
             <div class="container-s reveal">
                 <div class="who-restored-content" style="text-align: center;">
-                    <h2 class="section-title" style="font-size: clamp(2.2rem, 5vw, 4rem); margin-bottom: 3.5rem;">Para cuando sientes que algo dentro de ti <span class="accent-text">ya no puede más.</span></h2>
+                    <h2 class="section-title" style="max-width: 900px; margin: 0 auto 3.5rem;">Para cuando sientes que algo dentro de ti <span style="font-weight: 700; color: var(--accent); font-style: italic; font-size: 1.1em;">ya no puede más.</span></h2>
                     
-                    <div class="who-main-paragraphs" style="max-width: 750px; margin: 0 auto 5rem;">
-                        <p style="font-size: 1.35rem; line-height: 1.9; color: var(--text-muted); margin-bottom: 2.5rem;">Acompaño principalmente a mujeres y hombres que llegan con cansancio, sobrecarga emocional y la sensación de que nada fluye.</p>
-                        <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); opacity: 0.8;">Personas que ya han intentado “seguir como siempre”, pero su cuerpo, su mente o su corazón les piden un cambio.</p>
+                    <div class="who-main-paragraphs" style="max-width: 800px; margin: 0 auto 5rem; text-align: center;">
+                        <p style="font-size: 1.4rem; line-height: 1.7; color: var(--text-base); margin-bottom: 2rem; font-weight: 400; letter-spacing: -0.01em;">Acompaño principalmente a mujeres y hombres que llegan con cansancio, sobrecarga emocional y la sensación de que nada fluye.</p>
+                        <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); opacity: 0.8; font-weight: 400; max-width: 650px; margin: 0 auto;">Personas que ya han intentado “seguir como siempre”, pero su cuerpo, su mente o su corazón les piden un cambio.</p>
                     </div>
 
                     <div class="who-resonance-list" style="max-width: 650px; margin: 0 auto; text-align: left;">
@@ -116,9 +111,10 @@
                                 <p style="font-size: 1.15rem; color: var(--text-base);">En el fondo, sabes que necesitas parar, reconectar contigo y volver a sentir calma.</p>
                             </div>
                         </div>
-                        <div class="reveal" style="margin-top: 6.5rem; text-align: center; padding: 60px 8%; background: rgba(215, 162, 74, 0.05); border-radius: 4.5rem; border: 1px solid rgba(215, 162, 74, 0.12);">
-                            <p style="font-size: clamp(2rem, 5.5vw, 3rem); font-family: 'Noto Serif'; font-style: italic; color: var(--accent); line-height: 1.3; letter-spacing: -0.01em;">
-                                Y aunque hoy se sienta así, no estás sola. <br> Puedes volver a sentirte en equilibrio.
+                        <div class="reveal" style="margin-top: 8rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+                            <div style="width: 40px; height: 1px; background: var(--accent); margin: 0 auto 3rem; opacity: 0.4;"></div>
+                            <p style="font-size: clamp(1.8rem, 4vw, 2.4rem); font-family: 'Noto Serif'; font-style: italic; color: var(--accent); line-height: 1.6; letter-spacing: -0.01em; text-wrap: balance;">
+                                Y aunque hoy se sienta así, no estás sola. <br> <span style="font-weight: 700; white-space: nowrap;">Puedes volver a sentirte en equilibrio.</span>
                             </p>
                         </div>
                     </div>
@@ -133,9 +129,9 @@
                     <div class="essence-emblem reveal" style="margin-bottom: 3.5rem;">
                         <img src="assets/logo.webp?v=2.0" alt="YogaGanesha Emblem" style="width: 400px; filter: var(--logo-shadow); opacity: 0.9;">
                     </div>
-                    <h2 class="section-title" style="margin-bottom: 1.5rem;">Yoganesha: Yoga, <span class="accent-text">Reiki</span> y bienestar</h2>
-                    <p style="font-size: 1rem; color: var(--accent); letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 3.5rem; font-weight: 800; opacity: 0.8;">Un espacio para volver a tu centro</p>
-                    <p class="essence-paragraph" style="max-width: 800px; margin: 3rem auto 0; font-size: 1.35rem; line-height: 2; color: var(--text-muted);">
+                    <h2 class="section-title" style="margin-bottom: 1.5rem; max-width: 900px; margin-left: auto; margin-right: auto;">Yoganesha: Yoga, Reiki y bienestar</h2>
+                    <p style="font-size: 12px; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 3.5rem; font-weight: 400;">Un espacio para volver a tu centro</p>
+                    <p class="essence-paragraph" style="max-width: 750px; margin: 3rem auto 0; font-size: 18px; line-height: 1.7; color: var(--text-body); font-weight: 300;">
                         Yoganesha nace como un espacio para armonizar cuerpo, mente y espíritu a través de Reiki, Yoga Consciente y prácticas de reconexión interior. Cada sesión está pensada como un refugio para hacer una pausa, escucharte y comprender lo que tu energía necesita hoy. Así, avanzar hacia un mayor equilibrio y paz.
                     </p>
                 </div>
@@ -146,9 +142,9 @@
         <section class="section diag" id="diag">
             <div class="container-m reveal">
                 <div class="section-plane diag-plane" style="text-align: center; padding: 120px 10%;">
-                    <h2 class="section-title">Descubre lo que hoy <br> necesita tu <span class="accent-text">energía</span></h2>
-                    <p style="max-width: 750px; margin: 0 auto 3.5rem; font-size: 1.25rem; line-height: 1.9; color: var(--text-muted);">
-                        Creé este diagnóstico para que puedas detenerte unos minutos, mirar cómo estás y recibir una orientación amorosa sobre tu siguiente paso. No es un test frío ni técnico: es una guía sencilla para volver a escucharte.
+                    <h2 class="section-title">Descubre lo que hoy <br> necesita tu <span style="font-weight: 700; color: var(--accent);">energía</span></h2>
+                    <p style="max-width: 750px; margin: 0 auto 3.5rem; font-size: 18px; line-height: 1.7; color: var(--text-body); font-weight: 300;">
+                        Creé este diagnóstico para que puedas detenerte unos minutos, ver cómo te sientes y recibir una orientación amorosa para tu siguiente paso. No es un test frío ni técnico: es una guía sencilla para volver a escucharte y reconectar contigo.
                     </p>
                     <div class="diag-actions">
                         <a href="diagnostico" class="btn-primary" style="margin-bottom: 1.2rem;">Comenzar mi diagnóstico</a>
@@ -232,6 +228,7 @@
                     <div class="testimonial-card"><span class="quote-mark">“</span><p>Tuve una sesión de reiki me encantó al terminar me sentí completamente relajada y tranquila. Volvería hacerme la sesión de reiki. <br><strong style="opacity: 0.6; font-size: 0.8rem; margin-top: 10px; display: block;">— DANIELA</strong></p></div>
                     <div class="testimonial-card"><span class="quote-mark">“</span><p>Tomé sesiones de Reiki a distancia con Cristina de Yoganesha en un momento en que necesitaba mantenerme emocionalmente estable por una situación laboral. Me ayudaron mucho a calmarme, priorizar mi autocuidado en medio de un contexto exigente. <br><strong style="opacity: 0.6; font-size: 0.8rem; margin-top: 10px; display: block;">— SORAYA</strong></p></div>
                     <div class="testimonial-card"><span class="quote-mark">“</span><p>Gracias por la sesión de Reiki de hoy. Me siento en absoluta paz y con una energía renovada. Siento que algo se desbloqueó en mi interior y ahora todo fluye con mucha más armonía. <br><strong style="opacity: 0.6; font-size: 0.8rem; margin-top: 10px; display: block;">— MARCELO</strong></p></div>
+                    <!-- Duplicados necesarios para bucle infinito -->
                     <div class="testimonial-card"><span class="quote-mark">“</span><p>Tuve una sesión de reiki me encantó al terminar me sentí completamente relajada y tranquila. Volvería hacerme la sesión de reiki. <br><strong style="opacity: 0.6; font-size: 0.8rem; margin-top: 10px; display: block;">— DANIELA</strong></p></div>
                     <div class="testimonial-card"><span class="quote-mark">“</span><p>Tomé sesiones de Reiki a distancia con Cristina de Yoganesha en un momento en que necesitaba mantenerme emocionalmente estable por una situación laboral. Me ayudaron mucho a calmarme, priorizar mi autocuidado en medio de un contexto exigente. <br><strong style="opacity: 0.6; font-size: 0.8rem; margin-top: 10px; display: block;">— SORAYA</strong></p></div>
                     <div class="testimonial-card"><span class="quote-mark">“</span><p>Gracias por la sesión de Reiki de hoy. Me siento en absoluta paz y con una energía renovada. Siento que algo se desbloqueó en mi interior y ahora todo fluye con mucha más armonía. <br><strong style="opacity: 0.6; font-size: 0.8rem; margin-top: 10px; display: block;">— MARCELO</strong></p></div>
@@ -249,7 +246,7 @@
                         Puedes comenzar con el diagnóstico gratuito o escribirme directamente para agendar una sesión. No tienes que hacerlo sola, hay un camino posible y podemos recorrerlo paso a paso.
                     </p>
                     <div class="final-actions">
-                        <a href="diagnostico" class="btn-primary">Comenzar diagnóstico</a>
+                        <a href="diagnostico" class="btn-primary">Comenzar mi diagnóstico</a>
                         <a href="https://wa.me/56985966922" class="btn-whatsapp">WhatsApp Directo</a>
                     </div>
                 </div>
@@ -259,11 +256,11 @@
     </main>
 
     <!-- 🌌 MINIMALIST FOOTER RESTORED -->
-    <footer style="padding: 120px 5% 60px; text-align: center; position: relative; z-index: 10;">
-        <div style="font-family: 'Noto Serif'; font-size: 2.2rem; letter-spacing: 0.25em; color: var(--text-base); margin-bottom: 1rem;">Y O G A N  E S H A</div>
-        <p style="color: var(--accent); letter-spacing: 0.5em; font-weight: 800; text-transform: uppercase; font-size: 0.75rem;">Energy · Reiki · Wellness</p>
-        <div style="width: 40px; height: 1px; background: var(--accent); margin: 50px auto; opacity: 0.4;"></div>
-        <p style="font-size: 0.65rem; opacity: 0.4; letter-spacing: 0.1em;">© 2026 YOGANESHA. Elevado por <a href="https://agenciapatagoniacoach.cl" style="color: inherit; text-decoration: none; font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.1); transition: 0.3s var(--transition);">Agencia PatagoniaCoach</a>.</p>
+    <footer style="padding: 120px 5% 60px; text-align: center; position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 16px;">
+        <div style="font-family: 'Noto Serif'; font-size: 24px; letter-spacing: 12px; color: var(--text-base); margin-bottom: 4px; text-transform: uppercase;">Yoganesha</div>
+        <p style="color: var(--accent); letter-spacing: 2px; font-weight: 400; text-transform: uppercase; font-size: 11px;">Energy · Reiki · Wellness</p>
+        <div style="width: 40px; height: 1px; background: var(--accent); margin: 24px auto; opacity: 0.6;"></div>
+        <p class="footer-copyright">© 2026 YOGANESHA. Elevado por <a href="https://agenciapatagoniacoach.cl" style="color: inherit; text-decoration: none; font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.1); transition: 0.3s var(--transition);">Agencia PatagoniaCoach</a>.</p>
     </footer>
 
     <!-- CACHE BUSTER v63.0 -->

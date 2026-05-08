@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocuidado Energético Matutino | Cápsulas Yoganesha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;600;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=107.0">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+        .main-wrapper {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .capsule-card-master {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(215, 162, 74, 0.1);
+            border-radius: 4rem;
+            max-width: 900px;
+            width: 100%;
+            padding: 30px 50px;
+            text-align: center;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* 🌀 FRACTAL PLAYER */
+        .fractal-player-container {
+            margin: 0.5rem 0;
+            position: relative;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #fractal-canvas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .play-trigger {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: rgba(215, 162, 74, 0.1);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.9rem;
+        }
+        .play-trigger.playing {
+            background: var(--accent);
+            color: #FFF;
+            animation: pulse-ritual 3s infinite;
+        }
+        @keyframes pulse-ritual {
+            0% { box-shadow: 0 0 20px rgba(215, 162, 74, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(215, 162, 74, 0.5); }
+            100% { box-shadow: 0 0 20px rgba(215, 162, 74, 0.3); }
+        }
+
+        .ritual-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            width: 100%;
+            margin: 1rem 0;
+        }
+        .ritual-step {
+            padding: 15px;
+            background: rgba(215, 162, 74, 0.03);
+            border: 1px solid rgba(215, 162, 74, 0.05);
+            border-radius: 1.5rem;
+            text-align: left;
+        }
+        .step-tag {
+            color: var(--accent);
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+        .step-title {
+            font-family: 'Noto Serif';
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            font-style: italic;
+            color: var(--text-base);
+        }
+        .step-desc {
+            font-size: 0.75rem;
+            line-height: 1.4;
+            color: var(--text-muted);
+        }
+        .final-intention {
+            border-top: 1px solid rgba(215, 162, 74, 0.1);
+            padding-top: 1rem;
+            margin-top: 0.5rem;
+            font-family: 'Noto Serif';
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--text-base);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="aura-nebula"></div>
+    <canvas id="aura-particles"></canvas>
+
+    <div class="controls-top">
+        <a href="capsulas" style="text-decoration: none; color: var(--text-muted); font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase;">[ Regresar a Cápsulas ]</a>
+    </div>
+
+    <div class="main-wrapper">
+        <main class="capsule-card-master reveal">
+            
+            <header>
+                <span style="color: var(--accent); letter-spacing: 0.4em; text-transform: uppercase; font-size: 0.55rem; display: block; margin-bottom: 0.3rem;">Cápsula de Autocuidado</span>
+                <h1 style="font-family: 'Noto Serif'; font-size: 2rem; line-height: 1.1; margin-bottom: 0.8rem; font-weight: 400;">
+                    Autocuidado <span style="font-style: italic; color: var(--accent);">matutino</span>
+                </h1>
+                <p style="font-size: 0.85rem; line-height: 1.5; color: var(--text-muted); font-weight: 300; max-width: 650px; margin: 0 auto; font-family: 'Noto Serif'; font-style: italic;">
+                    Tus manos son herramientas de conexión y sanación. Al despertar, regálate unos minutos para volver a ti y armonizar tu energía.
+                </p>
+            </header>
+
+            <!-- 🌀 REPRODUCTOR FRACTAL -->
+            <div class="fractal-player-container">
+                <canvas id="fractal-canvas" width="400" height="400"></canvas>
+                <div class="play-trigger" id="audio-toggle">
+                    <span id="play-icon">▶</span>
+                </div>
+                <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 2px;">
+                    <p id="audio-status" style="font-size: 0.6rem; letter-spacing: 0.2em; color: var(--accent); text-transform: uppercase; margin: 0;">Escucha y conecta</p>
+                    <p id="audio-duration" style="font-size: 0.55rem; letter-spacing: 0.1em; color: var(--text-muted); opacity: 0.6; margin: 0;">Calculando...</p>
+                </div>
+                <audio id="capsule-audio" src="assets/capsula-4.mp3" preload="metadata"></audio>
+            </div>
+
+            <div class="ritual-grid">
+                <div class="ritual-step reveal">
+                    <span class="step-tag">01 · Activa</span>
+                    <h3 class="step-title">Calor</h3>
+                    <p class="step-desc">Frota tus manos hasta sentir el calor.</p>
+                </div>
+                <div class="ritual-step reveal" style="transition-delay: 0.1s;">
+                    <span class="step-tag">02 · Calma</span>
+                    <h3 class="step-title">Silencio</h3>
+                    <p class="step-desc">Manos a tus ojos y aquieta tu mente.</p>
+                </div>
+                <div class="ritual-step reveal" style="transition-delay: 0.2s;">
+                    <span class="step-tag">03 · Libera</span>
+                    <h3 class="step-title">Suelta</h3>
+                    <p class="step-desc">Manos al plexo solar. Suelta la carga.</p>
+                </div>
+                <div class="ritual-step reveal" style="transition-delay: 0.3s;">
+                    <span class="step-tag">04 · Conecta</span>
+                    <h3 class="step-title">Siente</h3>
+                    <p class="step-desc">Finaliza en tu corazón y solo siente.</p>
+                </div>
+            </div>
+
+            <div class="final-intention reveal">
+                Solo presencia y una intención amorosa hacia ti.
+            </div>
+
+            <footer style="margin-top: 1rem;">
+                <a href="https://wa.me/56985966922" class="btn-whatsapp" style="padding: 8px 20px; font-size: 0.7rem;">Compartir mi experiencia</a>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        const audio = document.getElementById('capsule-audio');
+        const toggle = document.getElementById('audio-toggle');
+        const icon = document.getElementById('play-icon');
+        const durationDisplay = document.getElementById('audio-duration');
+        const canvas = document.getElementById('fractal-canvas');
+        const ctx = canvas.getContext('2d');
+        let isPlaying = false;
+        let particles = [];
+
+        audio.addEventListener('loadedmetadata', () => {
+            const minutes = Math.floor(audio.duration / 60);
+            const seconds = Math.floor(audio.duration % 60);
+            durationDisplay.innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds} MINUTOS`;
+        });
+
+        class RitualParticle {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = canvas.width / 2;
+                this.y = canvas.height / 2;
+                this.angle = Math.random() * Math.PI * 2;
+                this.velocity = 0.8 + Math.random() * 1.5;
+                this.life = 1;
+                this.decay = 0.005 + Math.random() * 0.01;
+                this.color = `rgba(215, 162, 74, ${Math.random() * 0.4})`;
+            }
+            update() {
+                const speed = isPlaying ? this.velocity : this.velocity * 0.1;
+                this.x += Math.cos(this.angle) * speed;
+                this.y += Math.sin(this.angle) * speed;
+                this.life -= this.decay;
+                if (this.life <= 0) this.reset();
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 1.2, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        function initParticles() { for (let i = 0; i < 70; i++) particles.push(new RitualParticle()); }
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animate);
+        }
+
+        toggle.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                isPlaying = true;
+                toggle.classList.add('playing');
+                icon.innerText = 'II';
+            } else {
+                audio.pause();
+                isPlaying = false;
+                toggle.classList.remove('playing');
+                icon.innerText = '▶';
+            }
+        });
+
+        initParticles();
+        animate();
+    </script>
+
+    <script src="main.js?v=107.0"></script>
+</body>
+</html>

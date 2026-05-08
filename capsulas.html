@@ -9,23 +9,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- CACHE BUSTER v63.0 -->
-    <link rel="stylesheet" href="style.css?v=102.0">
+    <!-- CACHE BUSTER v66.0 -->
+    <link rel="stylesheet" href="style.css?v=107.0">
     <style>
         .capsules-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 60px;
             margin-top: 5rem;
         }
         .capsule-card {
             background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.03);
             transition: 0.8s var(--transition);
             cursor: pointer;
             overflow: hidden;
             text-align: left;
-            padding: 50px 40px !important;
+            padding: 80px 60px !important;
+            border-radius: 4rem;
+            display: block;
+            text-decoration: none;
+            color: inherit;
         }
         .capsule-card:hover {
             background: rgba(255,255,255,0.08);
@@ -88,36 +92,36 @@
                 <div class="capsules-grid">
                     
                     <!-- CAPSULA 1: MEDITACION -->
-                    <div class="section-plane capsule-card reveal">
+                    <a href="capsula-meditacion" class="section-plane capsule-card reveal">
                         <span class="capsule-tag">Meditación · Audio</span>
                         <h3 style="font-family: 'Noto Serif'; font-size: 1.8rem; margin-bottom: 1.5rem; font-style: italic;">Calma en 5 minutos</h3>
                         <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">Un breve ejercicio respiratorio para esos momentos donde el ruido mental se vuelve abrumador. Ideal para realizar al iniciar el día o antes de dormir.</p>
-                        <a href="capsula-meditacion" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; font-weight: 800; text-transform: uppercase;">Iniciar Escucha →</a>
-                    </div>
+                        <span style="color: var(--accent); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; font-weight: 800; text-transform: uppercase;">Iniciar Escucha →</span>
+                    </a>
 
                     <!-- CAPSULA 2: ENERGÍA -->
-                    <div class="section-plane capsule-card reveal" style="transition-delay: 0.2s;">
-                        <span class="capsule-tag">Energía · Consejos</span>
+                    <a href="capsula-energia" class="section-plane capsule-card reveal" style="transition-delay: 0.2s;">
+                        <span class="capsule-tag">Energía · Consejos · Audio</span>
                         <h3 style="font-family: 'Noto Serif'; font-size: 1.8rem; margin-bottom: 1.5rem; font-style: italic;">Enraizar tu energía</h3>
                         <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">¿Cómo volver a sentir los pies en la tierra cuando estamos sobrecargados? Aprende tres pasos sencillos para descargar tensiones al suelo de forma inmediata.</p>
-                        <a href="capsula-energia" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; font-weight: 800; text-transform: uppercase;">Ver Consejos →</a>
-                    </div>
+                        <span style="color: var(--accent); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; font-weight: 800; text-transform: uppercase;">Ver Consejos →</span>
+                    </a>
 
                     <!-- CAPSULA 3: REFLEXIÓN -->
-                    <div class="section-plane capsule-card reveal" style="transition-delay: 0.4s;">
+                    <a href="capsula-reflexion" class="section-plane capsule-card reveal" style="transition-delay: 0.4s;">
                         <span class="capsule-tag">Reflexión · Lectura</span>
                         <h3 style="font-family: 'Noto Serif'; font-size: 1.8rem; margin-bottom: 1.5rem; font-style: italic;">El arte de pausar</h3>
-                        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">¿Por qué nos cuesta tanto detenernos? Una breve reflexión sobre la resistencia al descanso y cómo permitirnos el vacío para que nazca lo nuevo.</p>
-                        <a href="capsula-reflexion" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; font-weight: 800; text-transform: uppercase;">Leer Reflexión →</a>
-                    </div>
+                        <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem; font-style: italic;">¿Cuándo fue la última vez… <br> que te permitiste no tener un objetivo?</p>
+                        <span style="color: var(--accent); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; font-weight: 800; text-transform: uppercase;">Leer Reflexión →</span>
+                    </a>
 
-                    <!-- CAPSULA 4: REIKI -->
-                    <div class="section-plane capsule-card reveal" style="transition-delay: 0.6s;">
-                        <span class="capsule-tag">Reiki · Autocuidado</span>
-                        <h3 style="font-family: 'Noto Serif'; font-size: 1.8rem; margin-bottom: 1.5rem; font-style: italic;">Autoreiki Matutino</h3>
-                        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">Pequeñas posiciones de manos que puedes aplicar tú misma al despertar para armonizar tus chakras principales y comenzar el día con intención.</p>
-                        <a href="capsula-reiki" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; font-weight: 800; text-transform: uppercase;">Ver Guía →</a>
-                    </div>
+                    <!-- CAPSULA 4: RITUAL -->
+                    <a href="capsula-ritual" class="section-plane capsule-card reveal" style="transition-delay: 0.6s;">
+                        <span class="capsule-tag">Energía · Autocuidado</span>
+                        <h3 style="font-family: 'Noto Serif'; font-size: 1.8rem; margin-bottom: 1.5rem; font-style: italic;">Autocuidado energético matutino</h3>
+                        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">Un pequeño ritual al despertar para conectar contigo, armonizar tu energía y comenzar el día con presencia e intención.</p>
+                        <span style="color: var(--accent); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; font-weight: 800; text-transform: uppercase;">Ver Guía →</span>
+                    </a>
 
                 </div>
             </div>
@@ -136,14 +140,14 @@
     </main>
 
     <!-- 🌌 MINIMALIST FOOTER RESTORED -->
-    <footer style="padding: 120px 5% 60px; text-align: center; position: relative; z-index: 10;">
-        <div style="font-family: 'Noto Serif'; font-size: 2.2rem; letter-spacing: 0.25em; color: var(--text-base); margin-bottom: 1rem;">Y O G A N  E S H A</div>
-        <p style="color: var(--accent); letter-spacing: 0.5em; font-weight: 800; text-transform: uppercase; font-size: 0.75rem;">Energy · Reiki · Wellness</p>
-        <div style="width: 40px; height: 1px; background: var(--accent); margin: 50px auto; opacity: 0.4;"></div>
-        <p style="font-size: 0.65rem; opacity: 0.4; letter-spacing: 0.1em;">© 2026 YOGANESHA. Elevado por <a href="https://agenciapatagoniacoach.cl" style="color: inherit; text-decoration: none; font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.1); transition: 0.3s var(--transition);">Agencia PatagoniaCoach</a>.</p>
+    <footer style="padding: 120px 5% 60px; text-align: center; position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 16px;">
+        <div style="font-family: 'Noto Serif'; font-size: 24px; letter-spacing: 12px; color: var(--text-base); margin-bottom: 4px; text-transform: uppercase;">Yoganesha</div>
+        <p style="color: var(--accent); letter-spacing: 2px; font-weight: 400; text-transform: uppercase; font-size: 11px;">Energy · Reiki · Wellness</p>
+        <div style="width: 40px; height: 1px; background: var(--accent); margin: 24px auto; opacity: 0.6;"></div>
+        <p class="footer-copyright">© 2026 YOGANESHA. Elevado por <a href="https://agenciapatagoniacoach.cl" style="color: inherit; text-decoration: none; font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.1); transition: 0.3s var(--transition);">Agencia PatagoniaCoach</a>.</p>
     </footer>
 
-    <!-- CACHE BUSTER v63.0 -->
-    <script src="main.js?v=102.0"></script>
+    <!-- CACHE BUSTER v66.0 -->
+    <script src="main.js?v=107.0"></script>
 </body>
 </html>

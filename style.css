@@ -1,39 +1,45 @@
 :root {
-    /* ✨ IDENTIDAD YOGANHESHA v51.0 (Monumental Presence) ✨ */
     --primary: #2D8C8C;
-    --accent: #D7A24A;
+    --accent: #C8A238; /* Dorado corregido según brief */
     --aura: #C9B6D9;
     --bg-base: #071010;
-    --text-base: #FDF9F4;
-    --text-muted: rgba(253, 249, 244, 0.6);
+    --text-base: #FFFFFF;
+    --text-body: #E0E0E0; /* Contraste mejorado según brief */
+    --text-muted: #CCCCCC;
     --blur-base: rgba(7, 16, 16, 0.85);
     --surface: rgba(255, 255, 255, 0.03);
     --glass-bg: rgba(255, 255, 255, 0.015);
-    --logo-shadow: 0 0 100px rgba(215, 162, 74, 0.25);
+    --logo-shadow: 0 0 100px rgba(200, 162, 56, 0.25);
     
-    --container-m: 1240px;
+    --container-m: 1200px;
     --container-s: 840px;
     --transition: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 :root[data-theme="light"] {
     --bg-base: #FDF9F4;
-    --text-base: #071010;
-    --text-muted: rgba(7, 16, 16, 0.55);
+    --text-base: #1A1A1A;
+    --text-body: #2D2D2D;
+    --text-muted: #4A4A4A;
     --blur-base: rgba(253, 249, 244, 0.9);
-    --surface: rgba(255, 255, 255, 0.85);
+    --surface: rgba(0, 0, 0, 0.05);
+}
+
+/* Fix Hero Title Contrast in Light Mode */
+:root[data-theme="light"] #hero-title span {
+    color: var(--text-base) !important;
 }
 
 /* 🖼️ RESET & BASE */
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 
-body { background-color: var(--bg-base); color: var(--text-base); font-family: 'Manrope', sans-serif; transition: 0.8s ease; line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
+body { background-color: var(--bg-base); color: var(--text-body); font-family: 'Manrope', sans-serif; transition: 0.8s ease; line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; text-wrap: pretty; font-size: 16px; }
 
 /* 🏔️ UTILITIES */
 .container-m { max-width: var(--container-m); margin: 0 auto; padding: 0 5%; }
 .container-s { max-width: var(--container-s); margin: 0 auto; padding: 0 5%; }
 .accent-text { color: var(--accent); font-style: italic; }
-.section-title { font-family: 'Noto Serif', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 2.5rem; letter-spacing: -0.01em; text-align: center; }
+.section-title { font-family: 'Noto Serif', serif; font-size: 36px; font-weight: 400; line-height: 1.2; margin-bottom: 2.5rem; letter-spacing: -0.01em; text-align: center; text-wrap: balance; color: var(--text-base); }
 
 /* 🎇 CELESTIAL ELEMENTS */
 #aura-particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 50; }
@@ -41,28 +47,29 @@ body { background-color: var(--bg-base); color: var(--text-base); font-family: '
 
 /* 🏔️ NAVIGATION & PORTAL MENU */
 .controls-top { position: fixed; top: 40px; right: 50px; z-index: 2000; display: flex; gap: 15px; }
-.theme-switch, .menu-trigger { background: var(--blur-base); backdrop-filter: blur(40px); border: 1px solid rgba(128,128,128,0.2); padding: 12px 28px; border-radius: 500px; cursor: pointer; display: flex; align-items: center; gap: 10px; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2rem; color: var(--text-base); transition: 0.5s var(--transition); }
-
+.theme-switch, .menu-trigger { background: var(--blur-base); backdrop-filter: blur(40px); border: 1px solid rgba(128,128,128,0.2); padding: 12px 28px; border-radius: 500px; cursor: pointer; display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; color: var(--text-base); transition: 0.5s var(--transition); }
 .menu-portal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--blur-base); backdrop-filter: blur(50px); z-index: 3000; padding: 100px 10%; display: flex; align-items: center; justify-content: center; transform: translateY(-100%); transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
 .menu-portal.active { transform: translateY(0); }
-.portal-links { display: flex; flex-direction: column; gap: 30px; text-align: center; }
-.portal-links a { font-family: 'Noto Serif', serif; font-size: clamp(3rem, 6vw, 5rem); color: var(--text-base); text-decoration: none; font-style: italic; transition: 0.5s; opacity: 0.4; }
+.portal-links { display: flex; flex-direction: column; gap: 24px; text-align: center; }
+.portal-links a { font-family: 'Manrope', sans-serif; font-size: 12px; color: var(--text-base); text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-weight: 400; transition: 0.5s; opacity: 0.7; }
+.portal-links a:hover, .portal-links a.active { opacity: 1; color: var(--accent); font-weight: 600; }
 .portal-links a:hover { opacity: 1; color: var(--accent); transform: scale(1.05); }
 
 /* 🏟️ HERO SECTION (MONUMENTAL) */
-.hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 120px 5% 60px; text-align: center; position: relative; z-index: 100; }
-.hero-content h1 { font-family: 'Noto Serif', serif; font-size: clamp(3.2rem, 11vw, 7.5rem); line-height: 1.05; margin-bottom: 2.5rem; letter-spacing: -0.02em; }
-.hero-subtitle { font-size: 1.25rem !important; line-height: 1.8; color: var(--text-muted); margin-bottom: 4.5rem !important; }
+.hero { min-height: 120vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 140px 5% 60px; text-align: center; position: relative; z-index: 100; }
+.hero-content h1 { font-family: 'Noto Serif', serif; font-size: 56px; line-height: 1.1; margin-bottom: 2.5rem; letter-spacing: -0.02em; text-wrap: balance; color: var(--text-base); font-weight: 400; }
+.hero-subtitle { font-size: 18px !important; line-height: 1.7; color: var(--text-body); margin-bottom: 4.5rem !important; font-weight: 300; }
 
 .hero-actions { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
 
-.btn-primary, .btn-secondary, .btn-whatsapp { display: inline-block; padding: 1.6rem 5rem; border-radius: 500px; text-decoration: none; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.75rem; transition: 0.6s var(--transition); border: 1px solid transparent; }
+.btn-primary, .btn-secondary, .btn-whatsapp { display: inline-block; padding: 16px 32px; border-radius: 500px; text-decoration: none; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; transition: 0.6s var(--transition); border: 1px solid transparent; }
 .btn-primary { background: var(--accent); color: var(--bg-base); box-shadow: 0 10px 30px rgba(215, 162, 74, 0.2); }
 .btn-primary:hover { background: var(--text-base); transform: scale(1.05) translateY(-8px); box-shadow: 0 30px 60px rgba(215, 162, 74, 0.4); }
 
-.btn-secondary { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); color: var(--text-base); }
+.btn-secondary { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
+.btn-secondary:hover { background: var(--accent); color: var(--bg-base); transform: scale(1.05) translateY(-5px); box-shadow: 0 15px 30px rgba(200, 162, 56, 0.2); }
 
-.btn-secondary:hover { background: rgba(255,255,255,0.15); transform: translateY(-5px); border-color: var(--text-base); }
+
 
 /* 🔱 LOGO CENTERING ENFORCEMENT */
 .hero-tilt-wrapper, .hero-visual, .logo-main-group {
@@ -74,11 +81,11 @@ body { background-color: var(--bg-base); color: var(--text-base); font-family: '
 }
 #main-logo-img { display: block; margin: 0 auto; }
 
-.btn-whatsapp { border: 2px solid var(--accent); color: var(--accent); background: transparent; padding: 1.6rem 5rem; }
-.btn-whatsapp:hover { background: var(--accent); color: var(--bg-base); transform: translateY(-8px); box-shadow: 0 30px 60px rgba(215, 162, 74, 0.2); }
+.btn-whatsapp { border: 1px solid var(--accent); color: var(--accent); background: transparent; }
+.btn-whatsapp:hover { background: var(--accent); color: var(--bg-base); transform: translateY(-5px); box-shadow: 0 15px 30px rgba(200, 162, 56, 0.2); }
 
 /* 🧘 SECTIONS & PLANES */
-.section { padding: 180px 0; position: relative; z-index: 110; }
+.section { padding: 120px 0; position: relative; z-index: 110; }
 .section-plane { background: var(--glass-bg); backdrop-filter: blur(40px); border: 1px solid rgba(255,255,255,0.03); border-radius: 6rem; padding: 100px 60px; box-shadow: 0 40px 100px rgba(0,0,0,0.1); position: relative; }
 
 /* 🫂 RESONANCE CAPSULES (Section 6) */
@@ -129,22 +136,15 @@ body { background-color: var(--bg-base); color: var(--text-base); font-family: '
     #theme-label { display: none; } /* Solo icono en movil */
 
     /* 🏟️ HERO */
-    .hero { padding: 140px 5% 80px; }
-    #main-logo-img { max-width: 85vw !important; height: auto !important; }
-    .hero-content h1 { font-size: clamp(2.5rem, 12vw, 4rem); margin-bottom: 1.5rem; }
-    .hero-subtitle { font-size: 1rem !important; line-height: 1.6; margin-bottom: 3rem !important; }
+    .hero { padding: 140px 24px 80px; }
+    .hero-content h1 { font-size: 32px; line-height: 1.15; }
+    .hero-subtitle { font-size: 16px !important; line-height: 1.6; }
 
-    .hero-actions { display: flex; flex-direction: column; width: 100%; max-width: 320px; gap: 15px; margin: 0 auto; align-items: center; }
-    .btn-primary, .btn-secondary, .btn-whatsapp { width: 100%; text-align: center; padding: 1.2rem 2rem; font-size: 0.65rem; }
-
-    /* 🧘 SECTIONS & PLANES */
-    .section { padding: 80px 0; }
-    .section-title { font-size: 2.2rem; margin-bottom: 2rem; }
-    .section-plane { padding: 60px 25px; border-radius: 3rem; margin-left: 15px; margin-right: 15px; }
-
-    /* 🧬 GRIDS & LAYOUTS */
+    /* 🧘 SECTIONS */
+    .section-title { font-size: 24px; line-height: 1.25; }
+    .section-plane { padding: 60px 24px; }
     .practices-grid { grid-template-columns: 1fr; gap: 20px; }
-    .practice-card { padding: 40px 20px !important; }
+    .practice-card { padding: 40px 24px !important; }
     
 
     /* 🫂 RESONANCE (Home) */
@@ -204,12 +204,15 @@ body { background-color: var(--bg-base); color: var(--text-base); font-family: '
 }
 
 /* 🕯️ LUMINOUS JOURNEY THEME (About Me Page) */
-.luminous-journey { background: radial-gradient(circle at center, #FFFFFF 0%, #FAF8F6 100%) !important; color: #4A4A4A !important; }
+.luminous-journey { background: radial-gradient(circle at center, #FFFFFF 0%, #FAF8F6 100%) !important; color: #2D2D2D !important; }
 .luminous-journey .section-title, .luminous-journey h1, .luminous-journey h2, .luminous-journey h3 { color: #1A1A1A !important; }
 .luminous-journey .accent-text { color: var(--accent) !important; }
 .luminous-journey .section-plane { background: #FFFFFF !important; border-color: rgba(215, 162, 74, 0.1) !important; box-shadow: 0 40px 100px rgba(215, 162, 74, 0.05) !important; }
-.luminous-journey .story-text p, .luminous-journey .narrative p { color: #555555 !important; }
+.luminous-journey .story-text p, .luminous-journey .narrative p { color: #2D2D2D !important; }
 .luminous-journey .sacred { background: #FDFBF8 !important; }
 .luminous-journey .final-monument { border-color: rgba(215, 162, 74, 0.15) !important; }
-.luminous-journey a:not(.btn-primary) { color: #555555 !important; }
-.luminous-journey blockquote, .luminous-journey .highlight p { color: #2D2D2D !important; }
+.luminous-journey a:not(.btn-primary) { color: #2D2D2D !important; }
+.luminous-journey blockquote, .luminous-journey .highlight p { color: #1A1A1A !important; }
+
+/* 🦶 FOOTER COPYRIGHT VISIBILITY */
+.footer-copyright { color: #2D2D2D !important; opacity: 1 !important; font-weight: 500; }

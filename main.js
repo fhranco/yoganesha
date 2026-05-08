@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ];
             this.color = colors[Math.floor(Math.random() * colors.length)];
             
-            this.opacity = Math.random() * 0.4 + 0.3; 
+            this.opacity = Math.random() * 0.2 + 0.15; 
             // VERY SLOW SERENE SPEED
             this.velY = Math.random() * 0.4 + 0.1; 
         }
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initParticles() {
         particles = [];
-        let pCount = (window.innerWidth < 768) ? 80 : 250; 
+        let pCount = (window.innerWidth < 768) ? 30 : 60; 
         for (let i = 0; i < pCount; i++) particles.push(new Particle());
     }
 
